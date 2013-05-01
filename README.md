@@ -1,5 +1,10 @@
-precondition: you need JDK6+ and ruby-1.9.3+ installed on your Windows machine  
+Requirement: 
+====
+Need JDK6+ and ruby-1.9.3+ installed on your Windows machine  
+Jmeter plugin added to your original Jmeter testing tool  
 
+Installation:  
+====
 1. Create your own repository and put all the files you downloaded from PetGym  
 2. Cd to the path where PetGym.rb is  
 3. Type cmd line in cmd window, for example: > PetGym.rb C:\AutoJimmy\Project_Home_Dir\Tests\Demo\PerfMon.jmx 3 1  
@@ -14,6 +19,7 @@ Under Conf/ folder, there is a conf_file.txt, some global wised parameter you ne
 * "jtl_del_flag"-- if you want to delete the .jtl temp raw data, you can turn it to true, it will save your diskspace if result set is large.  
 
 *About Jmeter Script Naming Convention:  
+====
 To use this tool, when you name the Action name in your Jmeter script, Actions in a same thread group must have the same prefix( and separate by "-").  
 
 For example, we have two thread groups,and 2 actions in each group,you can name them as following:  
