@@ -23,7 +23,7 @@ end
 #load from conf file, key value pairs
 puts $project_home = Dir.pwd.strip;
 
-#Fetch Conf data in the file
+#Fetch global parameters in the Conf file
 def fetch_conf_data()
   $file_data = {}
   File.open("#{$project_home}/Conf/conf_file.txt", 'r') do |file|
@@ -36,8 +36,9 @@ end
 
 fetch_conf_data();
 puts $jmeter_home = $file_data["jmeter_home"].strip;
-puts $result_type = $file_data["result_type"].strip;
-puts $jtl_del_flag = $file_data["jtl_del_flag"].strip;
+$result_type = $file_data["result_type"].strip;
+$jtl_del_flag = $file_data["jtl_del_flag"].strip;
+$responseTimesOverTime_flag = $file_data["ResponseTimesOverTime_png"].strip
 
 #extract the jmx script name
 puts jmx_name = File.basename($jmx_path, ".jmx");
@@ -68,6 +69,11 @@ while $i < $loop_count.to_i do
 
   #generate Aggregate report
   system("java -jar #{$jmeter_home}/lib/ext/CMDRunner.jar --tool Reporter --generate-csv #{csv_file_name} --input-jtl #{jtl_file_name} --plugin-type #{$result_type}")
+
+  #generate PNG type result
+  if $responseTimesOverTime_flag == "true"
+    system("java -jar #{$jmeter_home}/lib/ext/CMDRunner.jar --tool Reporter --generate-png #{$project_home}/Results/#{$result_file_name}/Round_#{$i}.png --input-jtl #{jtl_file_name} --plugin-type ResponseTimesOverTime --width 900 --height 700");
+  end
 
   #clean up .jtl files if delete flag is false
   File.delete(jtl_file_name) if ($jtl_del_flag.downcase == "true" && File.exist?(jtl_file_name));

@@ -1,3 +1,4 @@
 jmeter_home,C:/Tools/PerformanceTools/apache-jmeter-2.7
 result_type,AggregateReport
 jtl_del_flag,false
+ResponseTimesOverTime_png,true

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="1209" lt="630" ts="1367548243670" s="true" lb="BRX-TX1" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59044"/>
+<httpSample t="1233" lt="635" ts="1367548243670" s="true" lb="SLX-TX1" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59044"/>
+<httpSample t="694" lt="288" ts="1367548244901" s="true" lb="BRX-TX2" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+<httpSample t="2308" lt="307" ts="1367548244905" s="true" lb="SLX-TX2" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="2447" lt="289" ts="1367548245597" s="true" lb="BRX-TX1" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+<httpSample t="1459" lt="278" ts="1367548247215" s="true" lb="SLX-TX1" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="1267" lt="285" ts="1367548248044" s="true" lb="BRX-TX2" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+<httpSample t="877" lt="277" ts="1367548248675" s="true" lb="SLX-TX2" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="887" lt="287" ts="1367548249303" s="true" lb="BRX-TX1" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+<httpSample t="690" lt="288" ts="1367548249545" s="true" lb="SLX-TX1" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="692" lt="291" ts="1367548250191" s="true" lb="BRX-TX2" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59047"/>
+<httpSample t="685" lt="281" ts="1367548250237" s="true" lb="SLX-TX2" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="700" lt="298" ts="1367548250885" s="true" lb="BRX-TX1" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59047"/>
+<httpSample t="699" lt="294" ts="1367548250924" s="true" lb="SLX-TX1" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="490" lt="281" ts="1367548251625" s="true" lb="SLX-TX2" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59047"/>
+<httpSample t="700" lt="298" ts="1367548251586" s="true" lb="BRX-TX2" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+<httpSample t="483" lt="276" ts="1367548252288" s="true" lb="BRX-TX1" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+<httpSample t="684" lt="280" ts="1367548252119" s="true" lb="SLX-TX1" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="1672" lt="684" ts="1367548252804" s="true" lb="SLX-TX2" rc="200" rm="OK" tn="SLX_TG 2-1" dt="text" by="59043"/>
+<httpSample t="2072" lt="285" ts="1367548252772" s="true" lb="BRX-TX2" rc="200" rm="OK" tn="BRX_TG 1-1" dt="text" by="59043"/>
+
+</testResults>
