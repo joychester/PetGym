@@ -1,9 +1,8 @@
-Requirement: 
+Requirement:  
 ====
 Need JDK6+ and ruby-1.9.3+ installed on your Windows machine  
-Jmeter plugin added to your original Jmeter testing tool  
 
-Installation:  
+How To:  
 ====
 1. Create your own repository and put all the files you downloaded from PetGym  
 2. Cd to the path where PetGym.rb is  
@@ -41,3 +40,9 @@ For examlpe:
     SLX-LandingPage    
     SLX-SignIn   
     SLX-SignOut  
+
+Supported PNG type result:  
+====
+--ResponseTimesOverTime  
+The other canidates we may support in the future, please refer to:  
+http://code.google.com/p/jmeter-plugins/wiki/JMeterPluginsCMD  
