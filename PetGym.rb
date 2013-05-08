@@ -20,7 +20,7 @@ else
   puts $sleep_in_sec = ARGV[2];
 end
 
-#load from conf file, key value pairs
+#Load current directory path where PetGym.rb is
 puts $project_home = Dir.pwd.strip;
 
 #Fetch global parameters in the Conf file
@@ -39,6 +39,7 @@ puts $jmeter_home = $file_data["jmeter_home"].strip;
 $result_type = $file_data["result_type"].strip;
 $jtl_del_flag = $file_data["jtl_del_flag"].strip;
 $responseTimesOverTime_flag = $file_data["ResponseTimesOverTime_png"].strip
+$perfMon_flag = $file_data["PerfMon_png"].strip
 
 #extract the jmx script name
 puts jmx_name = File.basename($jmx_path, ".jmx");
@@ -58,6 +59,8 @@ while $i < $loop_count.to_i do
 
   jtl_file_name = "#{$project_home}/Results/#{$result_file_name}/Round_#{$i}_Raw.jtl";
   csv_file_name = "#{$project_home}/Results/#{$result_file_name}/Round_#{$i}_Agg_Result.csv";
+  #put monitoring temp jtl file under results folder, remove it after generating the png file
+  jtl_mon_file_name = "#{$project_home}/Results/PerfMon.jtl";
 
   #Jmeter test run C:/Tools/PerformanceTools/apache-jmeter-2.7
   $start_time = Time.now;
@@ -75,7 +78,17 @@ while $i < $loop_count.to_i do
     system("java -jar #{$jmeter_home}/lib/ext/CMDRunner.jar --tool Reporter --generate-png #{$project_home}/Results/#{$result_file_name}/Round_#{$i}.png --input-jtl #{jtl_file_name} --plugin-type ResponseTimesOverTime --width 900 --height 700");
   end
 
-  #clean up .jtl files if delete flag is false
+  #generate Resource monitoring PNG file, need to set up one monitoring listener in one .jmx test plan
+  if $perfMon_flag == "true"
+    if File.exists?(jtl_mon_file_name)
+      system("java -jar #{$jmeter_home}/lib/ext/CMDRunner.jar --tool Reporter --generate-png #{$project_home}/Results/#{$result_file_name}/Round_#{$i}_monitoring.png --input-jtl #{jtl_mon_file_name} --plugin-type PerfMon --width 900 --height 700");
+      
+      #delete it after generating png file each round
+      File.delete(jtl_mon_file_name)
+    end
+  end
+  
+  #clean up .jtl raw data files if delete flag is false
   File.delete(jtl_file_name) if ($jtl_del_flag.downcase == "true" && File.exist?(jtl_file_name));
 
   $i += 1;

@@ -44,5 +44,11 @@ For examlpe:
 Supported PNG type result:  
 ====
 --ResponseTimesOverTime  
+--PerfMon  
+
+Configure your PerfMon listener in your test plan :    
+If you want to generate PerfMon PNG file during testing, you need to add JMeterPlugin Listener "jp@gc - PerfMon Metrics Collector" globally(which means only one listener for all test plan).  
+Meanwhile, You need to save your monitoring result file under PetGym\Results folder, for example : D:\Cheng\PetGym\Results\PerfMon.jtl  
+
 The other canidates we may support in the future, please refer to:  
 http://code.google.com/p/jmeter-plugins/wiki/JMeterPluginsCMD  
