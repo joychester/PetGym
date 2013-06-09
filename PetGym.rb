@@ -131,11 +131,12 @@ while $i < $loop_count.to_i do
           $total_min = row[5].to_i if row[5].to_i < $total_min
           $total_max = row[6].to_i if row[6].to_i > $total_max
           $total_errs += row[7].to_f * row[1].to_i
-          $total_Throughput += row[8].to_f
           $total_kbs += row[9].to_f;
         end
       }
 
+      $total_Throughput = ($total_samples/$test_duration.to_f) * 10**3 if $test_duration > 0
+      
       #calculate and append total sum line for each thread group
       csv << ["Total", "#{$total_samples}", "#{$total_response_time/$total_samples}",
         "#{$total_median/$total_samples}", "#{$total_perc/$total_samples}","#{$total_min}",
